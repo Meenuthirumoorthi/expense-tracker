@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                git 'https://github.com/Meenuthirumoorthi/expense-tracker.git'
-            }
-        }
-
         stage('Build Docker') {
             steps {
                 sh 'docker build -t expense-app ./backend'
